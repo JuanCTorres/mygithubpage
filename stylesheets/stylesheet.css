@@ -15,12 +15,20 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1.2em;
 }
 
-h1 {
-    font-size: 40px;
-    padding-top: 40px;
+.page-header h1 {
+    padding-top: 2em;
     color: white;
 }
 
+.main-content h5, .main-content h6 {
+    color: #555555
+}
+
+.main-cell h5 {
+    font-size: .85em;
+}
+
+/* TODO look at this*/
 h2 {
     font-size: 20px;
     line-height: 150%;
@@ -30,26 +38,14 @@ h2 {
     padding-bottom: 5%;
 }
 
-div.cell-display {
-    padding: .5em 1.5em 1em 1.5em;
-    margin: .5em;
-    /*border: 1px green solid;*/
-    background: #eee;
-    -webkit-border-radius: .2em;
-    -moz-border-radius: .2em;
-    border-radius: .2em;
-    /*-ms-word-wrap: break-word;*/
-    /*word-wrap: break-word;*/
-    /*word-break: break-all;*/
+div.no-vspace h1, div.no-vspace h2, div.no-vspace h3, div.no-vspace h4, div.no-vspace h5, div.no-vspace h6 {
+    margin-top: .2em;
+    margin-bottom: .2em;
 }
 
-div.main-cell {
-    border: 1em white solid;
-    -webkit-border-radius: 1.2em;
-    -moz-border-radius: 1.2em;
-    border-radius: 1.2em;
-    background: #eee;
-    padding: 1em 1.5em 1em 1.5em;
+div.no-vspace {
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .main-content {
@@ -59,6 +55,15 @@ div.main-cell {
     margin-bottom: 4%;
     line-height: 1.8em;
     font-size: 120%;
+}
+
+div.main-cell {
+    border: 1em white solid;
+    -webkit-border-radius: 1.2em;
+    -moz-border-radius: 1.2em;
+    border-radius: 1.2em;
+    background: #eee;
+    padding: 1em 2em 1em 2em;
 }
 
 /* Content width: laptops, etc. */
@@ -71,8 +76,8 @@ div.main-cell {
     }
 
     #tagline {
-        padding-left: 25%;
-        padding-right: 25%;
+        max-width: 300px; /* keep the buttons near the center */
+        margin: auto;
     }
 }
 
@@ -86,11 +91,13 @@ div.main-cell {
     /* Less indentation for mobile; doesn't look quite right on desktop. */
     ol, ul {
         padding-left: 1em;
+        text-align: left; /* awful with justified */
     }
 
     #tagline {
-        padding-left: 20%;
-        padding-right: 20%;
+        /*padding-left: 20%;*/
+        /*padding-right: 20%;*/
+        max-width: 80%;
     }
 }
 
@@ -116,6 +123,10 @@ div.main-cell {
 @media (max-width: 650px) {
     div.main-display {
         margin: .5em;
+    }
+
+    div.main-cell {
+        font-size: smaller;
     }
 }
 
@@ -153,6 +164,7 @@ div.main-cell {
 }
 
 #tagline {
+    margin: auto;
     padding-bottom: 10%;
 }
 
