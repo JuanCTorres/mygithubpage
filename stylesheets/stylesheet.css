@@ -3,19 +3,33 @@ html {
 }
 
 body {
-    position: absolute; top: -40px;
+    position: absolute;
+    top: -40px;
     height: 100%;
+    max-width: 100%;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto Slab', serif;
-    font-size: 40px;
-    padding-top: 40px;
+    margin-top: 2em;
+    margin-bottom: 1.2em;
+}
+
+.page-header h1 {
+    padding-top: 2em;
     color: white;
 }
 
+.main-content h5, .main-content h6 {
+    color: #555555
+}
+
+.main-cell h5 {
+    font-size: .85em;
+}
+
+/* TODO look at this*/
 h2 {
-    font-family: 'Roboto Slab', serif;
     font-size: 20px;
     line-height: 150%;
     color: #e9ebec;
@@ -24,18 +38,99 @@ h2 {
     padding-bottom: 5%;
 }
 
-h3 {
-    font-family: 'Roboto Slab', serif;
-    font-size: 18px;
+div.no-vspace h1, div.no-vspace h2, div.no-vspace h3, div.no-vspace h4, div.no-vspace h5, div.no-vspace h6 {
+    margin-top: .2em;
+    margin-bottom: .2em;
+}
+
+div.no-vspace {
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .main-content {
-    padding-left: 25%;
-    padding-right: 25%;
-    min-width: 200px;
+    text-align: justify;
+    margin: auto;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    line-height: 1.8em;
+    font-size: 120%;
 }
 
-.main-content a{
+div.main-cell {
+    border: 1em white solid;
+    -webkit-border-radius: 1.2em;
+    -moz-border-radius: 1.2em;
+    border-radius: 1.2em;
+    background: #eee;
+    padding: 1em 2em 1em 2em;
+}
+
+/* Content width: laptops, etc. */
+@media (min-width: 901px) {
+    .main-content {
+        /*padding-left: 25%;*/
+        /*padding-right: 25%;*/
+        min-width: 200px;
+        max-width: 800px;
+    }
+
+    #tagline {
+        max-width: 300px; /* keep the buttons near the center */
+        margin: auto;
+    }
+}
+
+/* Content width: tablets, wide phones */
+@media (max-width: 900px) {
+    .main-content {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    /* Less indentation for mobile; doesn't look quite right on desktop. */
+    ol, ul {
+        padding-left: 1em;
+        text-align: left; /* awful with justified */
+    }
+
+    #tagline {
+        /*padding-left: 20%;*/
+        /*padding-right: 20%;*/
+        max-width: 80%;
+    }
+}
+
+/* Non-mobile devices: show table as a table */
+@media (min-width: 651px) {
+    div.main-table {
+        display: inline-table;
+    }
+
+    div.main-cell {
+        display: table-cell;
+        width: 50%;
+        height: 100%;
+    }
+
+    div.cell-display {
+        margin: 1em;
+        height: 100%;
+    }
+}
+
+/* Small screens */
+@media (max-width: 650px) {
+    div.main-display {
+        margin: .5em;
+    }
+
+    div.main-cell {
+        font-size: smaller;
+    }
+}
+
+.main-content a {
     color: #1bbf6c;
 }
 
@@ -57,6 +152,7 @@ h3 {
     min-height: 100%;
     height: 100%;
 }
+
 .btn {
     color: #e9ebec;
     border-width: 2px;
@@ -68,8 +164,7 @@ h3 {
 }
 
 #tagline {
-    padding-left: 25%;
-    padding-right: 25%;
+    margin: auto;
     padding-bottom: 10%;
 }
 
