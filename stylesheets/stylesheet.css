@@ -119,8 +119,23 @@ div.main-cell {
     }
 }
 
+/* Smallest screens: iPhone SE, Galaxy <= S5, etc.
+ * Main concern is the page-header only extending to the
+ * bottom of the screen and font going well beyond it
+ * due to the small screen size.
+ */
+@media(min-width: 200px) and (max-width: 350px) {
+    .page-header h2.project-tagline {
+        font-size: 16px;
+    }
+
+    .page-header a.btn {
+        font-size: smaller;
+    }
+}
+
 /* Small screens */
-@media (max-width: 650px) {
+@media (min-width: 351px) and (max-width: 650px) {
     div.main-display {
         margin: .5em;
     }
